@@ -54,3 +54,8 @@ const questions = [
       },
 ];
         
+function init() {
+    
+  };
+
+init();
