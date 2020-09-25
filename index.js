@@ -1,5 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 const questions = [
@@ -68,7 +70,7 @@ function init() {
     inquirer
       .prompt(questions)
       .then((answers) => {
-        writeToFile(generatedReadme.md, generateMarkdown(answers));
+        writeToFile("generatedReadme.md", generateMarkdown(answers));
         console.log("Successfully created your readme.");
       })
       .catch((err) => {
