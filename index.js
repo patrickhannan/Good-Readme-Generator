@@ -57,6 +57,12 @@ const questions = [
 function init() {
     inquirer
       .prompt(questions)
+      .then((answers) => {
+
+      })
+      .catch((err) => {
+          if (err) throw err;
+      });
   };
 
 init();
