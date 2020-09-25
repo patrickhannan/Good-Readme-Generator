@@ -29,7 +29,7 @@ function generateMarkdown(answers) {
 
   ## License
   
-  ${answers.license}
+  ![<${answers.license}>](https://img.shields.io/badge/License-${answers.license}-blue)
   
   
   ## Contributing

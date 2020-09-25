@@ -29,7 +29,7 @@ const questions = [
         type: "list",
         choices: [
         "MIT",
-        "ISC",
+        "Apache",
         "GPL-3.0",
         ],
         name: "license",
