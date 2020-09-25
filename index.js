@@ -55,7 +55,8 @@ const questions = [
 ];
         
 function init() {
-    
+    inquirer
+      .prompt(questions)
   };
 
 init();
