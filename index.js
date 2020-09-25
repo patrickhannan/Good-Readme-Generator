@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require("util");
+const generateMarkdown = require("./utils/generateMarkdown.js");
+
 const questions = [
     {
         type: "input",
@@ -53,12 +54,22 @@ const questions = [
         message: "Enter your email address."
       },
 ];
-        
+
+function writeToFile(fileName, answers) {
+    writeFileAsync(fileName, answers).then(function(){
+    }).catch(function(err){
+        if (err) {
+            return err;
+        }
+    })
+}      
+
 function init() {
     inquirer
       .prompt(questions)
       .then((answers) => {
-
+        writeToFile(generatedReadme.md, generateMarkdown(answers));
+        console.log("Successfully created your readme.");
       })
       .catch((err) => {
           if (err) throw err;
